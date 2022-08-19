@@ -1,4 +1,6 @@
+# import s * by se neměl používat
 from turtle import *
+
 def bunka(stred, lr):
     penup()
     forward(stred)

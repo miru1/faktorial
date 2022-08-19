@@ -1,0 +1,108 @@
+[33mcommit 267965c3b1676c28665cb98e2c853aac93372792[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Miroslav Uhlíř <uhlir717@seznam.cz>
+Date:   Mon Aug 8 21:09:49 2022 +0200
+
+    nejaký řádek
+
+[1mdiff --git a/faktorial.py b/faktorial.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5536b68[m
+[1m--- /dev/null[m
+[1m+++ b/faktorial.py[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m# výpočet faktoriálu[m
+[32m+[m
+[32m+[m[32m# načtení čísla ze vstupu a kontrola[m
+[32m+[m[32mx=int(input("zadej číslo pro výpočet: "))[m
+[32m+[m[32mif x<0:[m
+[32m+[m[32m    print("chybné čísli musí být větší 0")[m
+[32m+[m[32melif x==0:[m
+[32m+[m[32m    print("faktoriál 0! je 1")[m[41m    [m
+[32m+[m[32melse:[m
+[32m+[m[32m    f=1[m
+[32m+[m[32m    for i in range(1,x+1):[m
+[32m+[m[32m        f=f*i[m
+[32m+[m[32m    print(" faktorial ",x, "! je ", f)[m
+[32m+[m[32m#endif[m
+[1mdiff --git a/oko.py b/oko.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0f29f7a[m
+[1m--- /dev/null[m
+[1m+++ b/oko.py[m
+[36m@@ -0,0 +1,19 @@[m
+[32m+[m[32mimport random[m
+[32m+[m
+[32m+[m[32msoucet=0[m
+[32m+[m[32mvolba="A"[m
+[32m+[m
+[32m+[m[32mwhile  volba=="A":[m
+[32m+[m[32m    karta=random.randint(1,10)[m
+[32m+[m[32m    soucet=soucet+karta[m
+[32m+[m[32m    Aprint("vytáhl jsi si kartu=",karta, " součet máš = ",soucet)[m
+[32m+[m[41m [m
+[32m+[m[32m    if soucet==21:[m
+[32m+[m[32m        print("vyhlrál's!")[m
+[32m+[m[32m        volba="N"[m
+[32m+[m[32m    elif soucet>21:[m
+[32m+[m[32m        print("přetáhl jsi hombré")[m[41m    [m
+[32m+[m[32m        volba="N"[m
+[32m+[m[32m    else:[m
+[32m+[m[32m        volba=input("ještě kartu [A/N]: ")[m[41m    [m
+[32m+[m
+[1mdiff --git a/vceliplast.py b/vceliplast.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..654037e[m
+[1m--- /dev/null[m
+[1m+++ b/vceliplast.py[m
+[36m@@ -0,0 +1,50 @@[m
+[32m+[m[32mfrom turtle import *[m
+[32m+[m[32mdef bunka(stred, lr):[m
+[32m+[m[32m    penup()[m
+[32m+[m[32m    forward(stred)[m
+[32m+[m[32m    pendown()[m
+[32m+[m[32m    for s in range(6):[m
+[32m+[m[32m        forward(60)[m
+[32m+[m[32m        if lr=='L':[m
+[32m+[m[32m            left(60)[m
+[32m+[m[32m        else:[m
+[32m+[m[32m            right(60)[m
+[32m+[m
+[32m+[m[32mbunka(-120,'L')[m
+[32m+[m[32mbunka(0,'R')[m
+[32m+[m
+[32m+[m[32mpenup()[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mleft(60)[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mright(60)[m
+[32m+[m[32mpendown()[m
+[32m+[m[32mbunka(0,'L')[m
+[32m+[m[32mbunka(0,'R')[m
+[32m+[m
+[32m+[m[32mpenup()[m
+[32m+[m[32mleft(240)[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mleft(60)[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mright(300)[m
+[32m+[m[32mpendown()[m
+[32m+[m[32mbunka(0,'R')[m
+[32m+[m
+[32m+[m[32mpenup()[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mright(60)[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mleft(60)[m
+[32m+[m[32mbunka(0,'L')[m
+[32m+[m
+[32m+[m[32mpenup()[m
+[32m+[m[32mleft(120)[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mright(60)[m
+[32m+[m[32mforward(60)[m
+[32m+[m[32mleft(60)[m
+[32m+[m[32mbunka(0,'R')[m
+[32m+[m
+[32m+[m
+[32m+[m[32mexitonclick()[m
+\ No newline at end of file[m

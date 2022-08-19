@@ -16,7 +16,7 @@ def PromennyPocetArg(par1, *viceArg):
         i+=1
 
 #--------------------- start programu --------------------
-akce=7
+akce=10
 if akce==0:  #  fibonacciho číslo
     f100 = fib2(100)    # zavoláme funkci fib2()
     print(f100)                # a vytiskneme její výsledek
@@ -28,7 +28,7 @@ elif akce==2:  # lambda --------------------------------
     soucet=lambda a,b: a+b
     print(soucet(4,5))
 
-elif akce==3: #  řetezce
+elif akce==3:  #  řetezce
     print("C:\nahon")
     print("C:\\nahon")
     print("""toto je dlouhý text
@@ -44,7 +44,7 @@ elif akce==4:  # vestavěná funkce f
     print(f'{print}')
     print(len(f'{print}'))         
 
-elif akce==5:    # -------------------------------------------
+elif akce==5:  # -------------------------------------------
     retezec="čokoláda"
     print("řeteyec         :",retezec)  
     print("druhý znak      :",retezec[1])  # druhý znak
@@ -60,7 +60,7 @@ elif akce==5:    # -------------------------------------------
     print("neobsahuje x    :", "x" not in retezec)
     print("na velká        :",retezec.upper())
     
-elif akce==6: # doplnovaní   ------------------------------------ 
+elif akce==6:  # doplnovaní   ------------------------------------ 
     sablona="""
 Milý {jméno}    
 Váš výsledek je {soucet}
@@ -72,3 +72,58 @@ S pozdravem {podpis} """
     hlaska=f'jméno={jmeno}'
     print(hlaska)
     print(sablona.format(jméno=jmeno,soucet=soucet,podpis="Helga") )
+
+elif akce==7:  # funkce
+    def napis_hlasku(nazev, skore):
+        """Popíše skóre. Název má být přivlastňovací přídavné jméno."""
+
+        print(nazev, 'skóre je', skore)
+        if skore > 1000:
+            print('Světový rekord!')
+        elif skore > 100:
+            print('Skvělé!')
+        elif skore > 10:
+            print('Ucházející.')
+        elif skore > 1:
+            print('Aspoň něco')
+        else:
+            print('Snad příště.')
+            
+    napis_hlasku("tvoje", 100 ) 
+
+elif akce==8:  # funkce pro obsah obdélníka -----------
+    def obsah(strana_A, strana_B):
+        return strana_A * strana_B
+    
+    def oprav_vstup(par):
+        # vraví float, ale naghradí čárku tečkou 
+        ret=par.replace(',','.')
+        ret=ret.replace(' ','')
+        try:
+            vysledek=float(ret)
+        except:
+            vysledek = 0    
+        finally:
+            return vysledek
+
+    a=oprav_vstup(input("strana A: "))    
+    b=oprav_vstup(input("strana B: "))
+    print(f"obsah obdélníka o stranách {a} a {b} je ", obsah(a,b))
+
+elif akce==9:
+    from  math import pi
+    def obsah_elipsy(a,b):
+        return pi * a* b
+
+    print('Obsah elipsy s poloosami 3 a 5 je', obsah_elipsy(3, 5), 'cm2')
+
+
+elif akce==10:
+    import sys
+    print(sys.version)
+    print(sys.argv)
+    print(sys.exc_info())    
+    print(sys.base_prefix)
+    print(sys.path)
+    cesty=str(sys.path)
+    print(cesty.replace(',','\n'))
