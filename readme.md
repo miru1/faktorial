@@ -1,1 +1,2 @@
-rem toto je soubor readme.md
+# faktorial
+# toto jsou pokusy s Pythonem
